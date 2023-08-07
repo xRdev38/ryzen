@@ -15,8 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@xrdev_38/dynamic-field": ["libs/ui/dynamic-field/src/index.ts"],
-      "@xrdev_38/dynamic-form": ["libs/ui/dynamic-form/src/index.ts"],
       "@xrdev_38/features/courses": ["libs/features/courses/src/index.ts"],
       "@xrdev_38/features/survey-audio": [
         "libs/features/survey-audio/src/index.ts"
@@ -27,7 +25,12 @@
       "@xrdev_38/features/survey-multiple-choice": [
         "libs/features/survey-multiple-choice/src/index.ts"
       ],
-      "@xrdev_38/survey-player": ["libs/ui/survey-player/src/index.ts"]
+      "@xrdev_38/ui/card": ["libs/ui/card/src/index.ts"],
+      "@xrdev_38/ui/dynamic-field": ["libs/ui/dynamic-field/src/index.ts"],
+      "@xrdev_38/ui/dynamic-form": ["libs/ui/dynamic-form/src/index.ts"],
+      "@xrdev_38/ui/loader": ["libs/ui/loader/src/index.ts"],
+      "@xrdev_38/ui/modal": ["libs/ui/modal/src/index.ts"],
+      "@xrdev_38/ui/survey-player": ["libs/ui/survey-player/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

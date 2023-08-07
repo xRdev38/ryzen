@@ -1,1 +1,3 @@
-export * from './lib/dynamic-field/dynamic-field.component';
+export * from './lib/components';
+export * from './lib/models';
+export * from './lib/services';
