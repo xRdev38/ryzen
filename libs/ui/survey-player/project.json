@@ -1,0 +1,51 @@
+{
+  "name": "survey-player",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "prefix": "ryzen",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/ui/survey-player/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/ui/survey-player/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/ui/survey-player/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/ui/survey-player/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/ui/survey-player/**/*.ts",
+          "libs/ui/survey-player/**/*.html",
+          "libs/ui/survey-player/package.json"
+        ]
+      }
+    }
+  }
+}

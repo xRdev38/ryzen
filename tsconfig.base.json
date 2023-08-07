@@ -14,7 +14,21 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@xrdev_38/dynamic-field": ["libs/ui/dynamic-field/src/index.ts"],
+      "@xrdev_38/dynamic-form": ["libs/ui/dynamic-form/src/index.ts"],
+      "@xrdev_38/features/courses": ["libs/features/courses/src/index.ts"],
+      "@xrdev_38/features/survey-audio": [
+        "libs/features/survey-audio/src/index.ts"
+      ],
+      "@xrdev_38/features/survey-completion": [
+        "libs/features/survey-completion/src/index.ts"
+      ],
+      "@xrdev_38/features/survey-multiple-choice": [
+        "libs/features/survey-multiple-choice/src/index.ts"
+      ],
+      "@xrdev_38/survey-player": ["libs/ui/survey-player/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

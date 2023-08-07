@@ -1,0 +1,51 @@
+{
+  "name": "dynamic-field",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src",
+  "prefix": "ryzen",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/ui/dynamic-field/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/ui/dynamic-field/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/ui/dynamic-field/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/ui/dynamic-field/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "libs/ui/dynamic-field/**/*.ts",
+          "libs/ui/dynamic-field/**/*.html",
+          "libs/ui/dynamic-field/package.json"
+        ]
+      }
+    }
+  }
+}
