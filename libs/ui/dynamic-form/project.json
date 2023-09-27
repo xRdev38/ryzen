@@ -46,6 +46,12 @@
           "libs/ui/dynamic-form/package.json"
         ]
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
     }
   }
 }

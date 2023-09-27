@@ -46,6 +46,12 @@
           "libs/ui/loader/package.json"
         ]
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
     }
   }
 }

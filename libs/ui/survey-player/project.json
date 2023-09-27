@@ -46,6 +46,12 @@
           "libs/ui/survey-player/package.json"
         ]
       }
+    },
+    "version": {
+      "executor": "@jscutlery/semver:version",
+      "options": {
+        "preset": "angular"
+      }
     }
   }
 }
