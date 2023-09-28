@@ -3,7 +3,24 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "nx": "node ./node_modules/@nrwl/cli/bin/nx",
+    "build:all": "nx run-many --target=build-with-task",
+    "lint:all": "nx run-many --target=lint",
+    "publish:all": "nx run-many --target=publish",
+    "affected": "nx affected",
+    "affected:build": "nx affected:build",
+    "affected:e2e": "nx affected:e2e",
+    "affected:test": "nx affected:test",
+    "affected:lint": "nx affected:lint",
+    "test": "jest --maxWorkers=50%",
+    "test:watch": "jest --watch --maxWorkers=25%",
+    "test:ci": "jest --runInBand",
+    "update": "nx migrate latest",
+    "dep-graph": "nx dep-graph",
+    "help": "nx help",
+    "serve:ryzen": "nx serve ryzen",
+    "workspace-generator": "nx workspace-generator"
   },
   "private": true,
   "dependencies": {
@@ -34,6 +51,7 @@
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-angular": "^17.0.0",
     "@jscutlery/semver": "^3.1.0",
+    "@nrwl/nx-cloud": "^16.4.0",
     "@nx/cypress": "16.6.0",
     "@nx/eslint-plugin": "16.6.0",
     "@nx/jest": "16.6.0",
