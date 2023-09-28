@@ -5,9 +5,8 @@
   "scripts": {
     "prepare": "husky install",
     "nx": "node ./node_modules/@nrwl/cli/bin/nx",
-    "build:all": "nx run-many --target=build-with-task",
+    "build:all": "nx run-many --target=build",
     "lint:all": "nx run-many --target=lint",
-    "publish:all": "nx run-many --target=publish",
     "affected": "nx affected",
     "affected:build": "nx affected:build",
     "affected:e2e": "nx affected:e2e",
@@ -80,6 +79,7 @@
     "postcss-preset-env": "~7.5.0",
     "postcss-url": "~10.1.3",
     "prettier": "^2.6.2",
+    "surge": "^0.23.1",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
     "typescript": "~5.1.3"

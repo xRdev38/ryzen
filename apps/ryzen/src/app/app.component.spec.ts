@@ -14,14 +14,12 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain(
-      'Welcome ryzen'
-    );
+    expect(compiled.querySelector('h1')?.textContent).toContain('Welcome Rudy');
   });
 
-  it(`should have as title 'ryzen'`, () => {
+  it(`should have as title 'Rudy'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ryzen');
+    expect(app.title).toEqual('Rudy');
   });
 });
