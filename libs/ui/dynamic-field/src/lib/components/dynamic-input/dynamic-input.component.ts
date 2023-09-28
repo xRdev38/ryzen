@@ -1,14 +1,5 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  Input,
-} from '@angular/core';
-import {
-  FormGroup,
-  FormGroupDirective,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 import { FieldsModel } from '../../models';
 
@@ -22,11 +13,11 @@ import { FieldsModel } from '../../models';
 })
 export class DynamicInputComponent {
   @Input() field!: FieldsModel;
-  formName: FormGroup;
+  // formName: FormGroup;
 
-  private formGroupDirective: FormGroupDirective = inject(FormGroupDirective);
+  // private formGroupDirective: FormGroupDirective = inject(FormGroupDirective);
 
   constructor() {
-    this.formName = this.formGroupDirective.control;
+    // this.formName = this.formGroupDirective.control;
   }
 }

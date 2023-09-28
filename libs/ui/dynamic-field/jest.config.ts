@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
   displayName: 'dynamic-field',
-  preset: '../../jest.preset.js',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory: '../../coverage/libs/ui/dynamic-field',
   transform: {

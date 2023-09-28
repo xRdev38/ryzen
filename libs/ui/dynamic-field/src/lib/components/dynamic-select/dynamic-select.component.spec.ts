@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DynamicSelectComponent } from './dynamic-select.component';
+import { MessageService } from '../../services';
 
 describe('DynamicSelectComponent', () => {
   let component: DynamicSelectComponent;
@@ -8,7 +9,8 @@ describe('DynamicSelectComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [DynamicSelectComponent],
+      imports: [DynamicSelectComponent],
+      providers: [MessageService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(DynamicSelectComponent);

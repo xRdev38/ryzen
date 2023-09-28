@@ -5,11 +5,7 @@ import {
   inject,
   Input,
 } from '@angular/core';
-import {
-  FormGroup,
-  FormGroupDirective,
-  ReactiveFormsModule,
-} from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { filter } from 'rxjs';
 import { NgForOf } from '@angular/common';
 import { MessageService } from '../../services';
@@ -28,11 +24,11 @@ export class DynamicSelectComponent implements AfterViewInit {
   @Input() field!: FieldsModel;
   formName!: FormGroup;
 
-  private formGroupDirective: FormGroupDirective = inject(FormGroupDirective);
+  // private formGroupDirective: FormGroupDirective = inject(FormGroupDirective);
   private messageService: MessageService = inject(MessageService);
 
   constructor() {
-    this.formName = this.formGroupDirective.control;
+    // this.formName = this.formGroupDirective.control;
   }
 
   ngAfterViewInit(): void {
