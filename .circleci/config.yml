@@ -87,7 +87,17 @@ jobs:
       - store_artifacts:
           path: dist/libs/ui.components.tar.gz
           destination: ryzen-components
-
+      - run:
+          name: Create features package if it exists
+          command: |
+            if [[ -d ./dist/libs/features ]];
+            then
+              cd dist/libs
+              tar czf features.components.tar.gz ./features/
+            fi
+      - store_artifacts:
+          path: dist/libs/features.components.tar.gz
+          destination: features-components
 workflows:
   version: 2
   ryzen:
