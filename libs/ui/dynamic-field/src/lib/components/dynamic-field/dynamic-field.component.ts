@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'rz-dynamic-field',
+  selector: 'ryzen-dynamic-field',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './dynamic-field.component.html',

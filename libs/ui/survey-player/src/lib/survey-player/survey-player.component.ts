@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'rz',
+  selector: 'ryzen-survey-player',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './survey-player.component.html',

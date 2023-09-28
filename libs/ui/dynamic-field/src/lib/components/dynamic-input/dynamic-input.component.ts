@@ -10,9 +10,10 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
+import { FieldsModel } from '../../models';
 
 @Component({
-  selector: 'app-dynamic-input',
+  selector: 'ryzen-dynamic-input',
   templateUrl: './dynamic-input.component.html',
   styleUrls: ['./dynamic-input.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -20,7 +21,7 @@ import { JsonPipe } from '@angular/common';
   imports: [ReactiveFormsModule, JsonPipe],
 })
 export class DynamicInputComponent {
-  @Input() field: any;
+  @Input() field!: FieldsModel;
   formName: FormGroup;
 
   private formGroupDirective: FormGroupDirective = inject(FormGroupDirective);

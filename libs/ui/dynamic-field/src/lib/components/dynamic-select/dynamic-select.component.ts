@@ -10,13 +10,14 @@ import {
   FormGroupDirective,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { filter, takeUntil } from 'rxjs';
+import { filter } from 'rxjs';
 import { NgForOf } from '@angular/common';
 import { MessageService } from '../../services';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { FieldsModel, ValueField } from '../../models';
 
 @Component({
-  selector: 'rz-dynamic-select',
+  selector: 'ryzen-dynamic-select',
   templateUrl: './dynamic-select.component.html',
   styleUrls: ['./dynamic-select.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -24,7 +25,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
   imports: [ReactiveFormsModule, NgForOf],
 })
 export class DynamicSelectComponent implements AfterViewInit {
-  @Input() field: any;
+  @Input() field!: FieldsModel;
   formName!: FormGroup;
 
   private formGroupDirective: FormGroupDirective = inject(FormGroupDirective);
@@ -58,7 +59,9 @@ export class DynamicSelectComponent implements AfterViewInit {
     }
     this.messageService.messageSubject.next({
       link: this.field.fieldName,
-      data: this.field.provideData.filter((v: any) => v.sourceValue === value),
+      data: this.field.provideData.filter(
+        (v: ValueField) => v.sourceValue === value
+      ),
     });
   }
 }
