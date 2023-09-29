@@ -45,12 +45,50 @@ jobs:
           name: Run test
           command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=test --parallel=3 --ci --code-coverage
       - run:
+          name: Run test e2e
+          command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=e2e --parallel=3
+      - run:
           name: Run build
           command: npx nx affected --base=$NX_BASE --head=$NX_HEAD --target=build --parallel=3
       - run:
           name: Stop all agents
           command: npx nx-cloud stop-all-agents
           when: always
+
+  test-e2e:
+    docker:
+      - image: cypress/base:16
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - nx/set-shas:
+          error-on-no-successful-workflow: true
+          main-branch-name: master
+      - run: npm ci
+      - run: npx nx run-many --target=e2e
+      - run:
+          name: Create screenshots e2e if it exists
+          command: |
+            if [[ -d ./dist/cypress/apps/ryzen-e2e/screenshots ]];
+            then
+              cd dist/cypress/apps/ryzen-e2e
+              tar czf screenshots.tar.gz ./screenshots/
+            fi
+      - store_artifacts:
+          path: dist/cypress/apps/ryzen-e2e/screenshots.tar.gz
+          destination: cypress-ryzen-screenshots
+      - run:
+          name: Create video e2e if it exists
+          command: |
+            if [[ -d ./dist/cypress/apps/ryzen-e2e/videos ]];
+            then
+              cd dist/cypress/apps/ryzen-e2e
+              tar czf videos.tar.gz ./videos/
+            fi
+      - store_artifacts:
+          path: dist/cypress/apps/ryzen-e2e/videos.tar.gz
+          destination: cypress-ryzen-videos
 
   build-deploy:
     docker:
@@ -109,6 +147,10 @@ workflows:
               ordinal: [1, 2, 3]
       - main:
           name: Nx Cloud Main
+      - test-e2e:
+          name: Nx Cloud Test e2e
+          requires:
+            - Nx Cloud Main
       - build-deploy:
           name: Nx deploy apps
           requires:

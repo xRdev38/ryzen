@@ -5,6 +5,7 @@
   "scripts": {
     "prepare": "husky install",
     "nx": "node ./node_modules/@nrwl/cli/bin/nx",
+    "e2e": "ng e2e",
     "build:all": "nx run-many --target=build",
     "lint:all": "nx run-many --target=lint",
     "affected": "nx affected",
