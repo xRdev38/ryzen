@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
+import { core } from '@xrdev_38/core-ts';
 
 @Component({
   standalone: true,
@@ -11,4 +12,5 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 })
 export class AppComponent {
   title = 'Rudy';
+  subtitle = core();
 }

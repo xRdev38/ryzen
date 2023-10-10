@@ -33,6 +33,7 @@
     "@angular/platform-browser-dynamic": "~16.1.0",
     "@angular/router": "~16.1.0",
     "@nx/angular": "16.6.0",
+    "@xrdev_38/common-ts": "^0.0.1",
     "@xrdev_38/core-ts": "^0.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

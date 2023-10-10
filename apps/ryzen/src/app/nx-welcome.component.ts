@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -423,8 +423,9 @@ import { CommonModule } from '@angular/common';
         <div id="welcome">
           <h1>
             <span> Hello there, </span>
-            Welcome Rudy 👋
+            Welcome {{ title }} 👋
           </h1>
+          <h3>{{ subtitle }}</h3>
         </div>
         <!--  HERO  -->
         <div id="hero" class="rounded">
@@ -853,4 +854,7 @@ nx affected:e2e</pre>
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })
-export class NxWelcomeComponent {}
+export class NxWelcomeComponent {
+  @Input() subtitle!: string;
+  @Input() title!: string;
+}
